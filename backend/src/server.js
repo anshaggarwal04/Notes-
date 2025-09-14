@@ -23,6 +23,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
 app.use(rateLimiter);
+app.use(cors());
+cors({
+  origin: "http://localhost:5713",
+}  )
 
 // our simple custom middleware
 // app.use((req, res, next) => {
